@@ -1,0 +1,36 @@
+		// Armstrong number
+		
+#include<stdio.h>
+
+int check(int n);
+
+int main(void)
+{
+	int n, i;
+
+	printf("Enter N: ");
+	scanf("%d", &n);
+	printf("Between 1 to %d are:", n);
+	for(i=0; i<n; i++)
+	{
+		if(check(i))
+			printf("%d is armstring...\n", i);
+	}
+}
+
+int check(int n)
+{
+	int rem, sum=0, tempN;
+	tempN = n;
+	//printf("%d", i);
+	while(tempN != 0)
+	{		
+		rem = tempN % 10;
+		sum = sum + (rem * rem * rem);
+		tempN /= 10;
+	}
+	if(sum == n)
+		return 1;
+	else
+		return 0;
+}

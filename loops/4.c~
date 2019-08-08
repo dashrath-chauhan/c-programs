@@ -1,0 +1,16 @@
+	//sum of natural numbers
+
+#include<stdio.h>
+
+int main(void)
+{
+	int n, sum=0;
+	int i;
+	printf("Enter infinite number in series: ");
+	scanf("%i", &n);
+
+	for(i=1; i<n; i++)
+		sum = sum+i;
+
+	printf("Sum of first %d natural numbers is %d\n", n, sum);
+}
