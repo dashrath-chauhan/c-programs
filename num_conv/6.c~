@@ -1,0 +1,44 @@
+			//Hex to binary
+			//Author: Dashrath Chauhan
+
+#include<stdio.h>
+
+int main(void)
+{
+	int num, cnt, i;
+	char hex[32];
+
+	printf("Enter number in decimal: ");
+	scanf("%d", &num);
+
+	cnt = 0;
+	while(num>0)
+	{
+		switch(num % 16)
+		{
+			case 10:
+				hex[cnt]='A'; break;
+			case 11:
+				hex[cnt]='B'; break;
+			case 12:
+				hex[cnt]='C'; break;
+			case 13:
+				hex[cnt]='D'; break;
+			case 14:
+				hex[cnt]='E'; break;
+			case 15:
+				hex[cnt]='F'; break;
+			default:
+				hex[cnt] = (num%16) + 0x30;
+		}
+		num = num / 16;
+		cnt++;
+	}
+
+	printf("Equivalent Hex number is: ");
+	for(i=(cnt-1); i>=0; i--)
+	{
+		printf("%c", hex[i]);
+	}
+	printf("\n");
+}
